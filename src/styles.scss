@@ -1,0 +1,154 @@
+@import"_variables";
+
+body{
+    padding:0px;
+    margin:0px;
+
+header{
+    height: 10vh;
+    
+    .toolbar{
+        height: 30%;
+        display: flex;
+        justify-content: space-between;
+        
+        input{
+            height: 70%;
+        }
+    }
+    .page-title{
+        height: 70%;
+        font-size: $font-size;
+        background-color:yellowgreen;
+        color:$color-letter;
+
+        display:flex;
+        flex-direction: column;
+        justify-content: center;   
+    }
+
+}
+.page-container{
+    display:flex;
+    height:auto;
+
+    nav.menu-container{
+        background-color:rgb(71, 71, 23) ;
+        font-family: $font-family;
+         position:sticky;
+         top:1px;
+        
+        .menu-title{
+            color:$color-letter;
+            font-size:$font-size;
+            position:sticky;
+            top:0px;
+
+        }
+        .menu{
+            background-color:rgb(242, 237, 191) ;
+            font-size:$font-size;
+            position:sticky;
+            top:30px;
+            div{
+                border:$border;
+                padding: 5px;
+                
+                &:hover{
+                    background-color:rgb(245, 204, 153) ;
+                }
+            }
+        }
+    }
+    
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .card.item{
+            height: 200px;
+            width: 300px;
+            border:$border;
+            border-radius: 5px;
+            margin: 20px;
+            font-family: $font-family;
+            background-color: $color-letter;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &:hover{
+                background-color: lightgrey;
+            }
+            
+            img{
+                border-radius: 50%;
+            }
+            
+        }
+    }
+    
+}
+footer{
+    height:5vh;
+    width: 100vw;
+    background-color:rgb(242, 237, 191);
+    font-family: $font-family;
+    position:fixed;
+    bottom: 0px;
+    
+}
+}
+    @media screen and (max-width:700px){
+         body header .toolbar{
+            display: none;
+        }
+        header{
+            background-color: yellowgreen;
+        }
+      
+        .page-container{
+            display: flex;
+            flex-direction:column;
+            .menu-container{
+               position:sticky;
+               top:0px;
+            }
+           .menu{
+               width: 100vw;
+
+               display: flex;
+               justify-content: space-around;
+            }
+            .menu-title{
+                display:none;
+            }
+           .list{
+               margin:0px;
+               background-color: lightgray;
+
+               display: flex;
+               flex-direction: column;
+               align-content: center;
+            }
+        }
+         body .page-container .list .card.item {
+           border: none;
+           width: 95vw;
+           margin: 5px;
+
+           flex-direction: row;
+           justify-content: flex-start;
+           .member-name{
+               padding: 20px;
+           }
+           img{
+               padding: 20px;
+           }
+
+       }  
+       
+    }                                          
